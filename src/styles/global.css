@@ -1,0 +1,74 @@
+/* ai-dx.org — dark mode, electric blue/purple, code-forward */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg: #0e1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-light: #79c0ff;
+  --accent-purple: #bc8cff;
+  --link: #58a6ff;
+  --tag-bg: #1c2d3f;
+  --tag-text: #79c0ff;
+  --max-w: 740px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; font-weight: 300; font-size: 1.02rem; line-height: 1.75; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; line-height: 1.25; color: var(--text); }
+
+.site-header { border-bottom: 1px solid var(--border); padding: 1.1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: var(--surface); }
+.site-title { font-family: 'Fira Code', monospace; font-size: 1.15rem; font-weight: 500; color: var(--accent); }
+.site-title a { color: inherit; }
+.site-title a:hover { text-decoration: none; }
+nav a { margin-left: 1.5rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+nav a:hover { color: var(--accent); text-decoration: none; }
+
+main { max-width: var(--max-w); margin: 3rem auto; padding: 0 1.5rem; }
+
+.hero { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.hero h1 { font-size: 2rem; margin-bottom: 0.75rem; font-family: 'Fira Code', monospace; font-weight: 400; color: var(--accent); }
+.hero p { color: var(--muted); font-size: 1.05rem; }
+
+.article-list { list-style: none; }
+.article-item { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+.article-item:last-child { border-bottom: none; }
+.article-item h2 { font-size: 1.2rem; margin-bottom: 0.35rem; }
+.article-item h2 a { color: var(--text); }
+.article-item h2 a:hover { color: var(--accent); text-decoration: none; }
+.article-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; font-family: 'Fira Code', monospace; }
+.article-desc { color: var(--muted); font-size: 0.93rem; }
+
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+.tag { background: var(--tag-bg); color: var(--tag-text); padding: 0.2rem 0.65rem; border-radius: 4px; font-size: 0.78rem; font-family: 'Fira Code', monospace; border: 1px solid var(--border); }
+.tag:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.tag.large { font-size: 0.9rem; padding: 0.28rem 0.8rem; }
+
+.article-header { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+.article-header h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.article-header .meta { color: var(--muted); font-size: 0.8rem; font-family: 'Fira Code', monospace; }
+
+.prose p { margin-bottom: 1.4rem; }
+.prose h2 { font-size: 1.4rem; margin: 2rem 0 0.75rem; color: var(--accent-light); }
+.prose h3 { font-size: 1.1rem; margin: 1.5rem 0 0.5rem; color: var(--accent-purple); }
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.4rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose strong { font-weight: 600; color: var(--accent-light); }
+.prose em { font-style: italic; color: var(--muted); }
+.prose blockquote { border-left: 3px solid var(--accent); padding-left: 1.2rem; color: var(--muted); margin: 1.5rem 0; font-style: italic; }
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.prose code { font-family: 'Fira Code', monospace; font-size: 0.88em; background: var(--surface); padding: 0.1em 0.4em; border-radius: 4px; color: var(--accent-purple); border: 1px solid var(--border); }
+.prose pre { background: var(--surface); padding: 1rem; border-radius: 6px; overflow-x: auto; border: 1px solid var(--border); margin-bottom: 1.4rem; }
+
+.back-link { display: inline-block; margin-top: 2.5rem; font-size: 0.85rem; color: var(--muted); font-family: 'Fira Code', monospace; }
+.back-link:hover { color: var(--accent); }
+.article-tags { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.article-tags h3 { font-family: 'Fira Code', monospace; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.75rem; }
+.tag-page-title { font-size: 1.8rem; margin-bottom: 0.5rem; font-family: 'Fira Code', monospace; font-weight: 400; }
+.tag-page-title span { color: var(--accent); }
+.site-footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 4rem; font-family: 'Fira Code', monospace; background: var(--surface); }

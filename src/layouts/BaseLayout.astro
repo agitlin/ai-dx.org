@@ -1,0 +1,27 @@
+---
+export interface Props { title: string; description?: string; }
+const { title, description = 'ai-dx.org — managing developer experience in the age of AI.' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | ai-dx.org</title>
+  <meta name="description" content={description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title"><a href="/">ai-dx.org</a></div>
+    <nav>
+      <a href="/about">About</a>
+      <a href="/articles">Articles</a>
+      <a href="/tags">Tags</a>
+    </nav>
+  </header>
+  <main><slot /></main>
+  <footer class="site-footer">© {new Date().getFullYear()} ai-dx.org</footer>
+</body>
+</html>
