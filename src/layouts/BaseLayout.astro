@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 export interface Props { title: string; description?: string; }
 const { title, description = 'ai-dx.org — managing developer experience in the age of AI.' } = Astro.props;
 ---
@@ -10,7 +11,6 @@ const { title, description = 'ai-dx.org — managing developer experience in the
   <title>{title} | ai-dx.org</title>
   <meta name="description" content={description} />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="stylesheet" href="/styles/global.css" />
 </head>
 <body>
   <header class="site-header">
