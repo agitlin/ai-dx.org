@@ -1,12 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAboutArticle } from '../lib/content';
+
+// The About page renders whichever article is tagged `about` (enforced unique
+// at build time in lib/content.ts), so it's editable in the CMS like any post.
+const about = await getAboutArticle();
+const { Content } = about ? await about.render() : { Content: null };
 ---
-<BaseLayout title="About">
+<BaseLayout title="About" description={about?.data.description}>
   <article class="prose">
-    <div class="article-header"><h1>About</h1></div>
-    <p>Developer experience used to mean: good tooling, fast feedback loops, clear documentation, no unnecessary friction.</p>
-    <p>In the age of AI, that definition needs an update. Now DX includes: how well you work with an LLM, how you structure your context, how you decide when to trust the output and when to push back. It includes what it means to be a <em>Frictional CTO</em> — someone who creates the right friction, disagrees with the vibe, and future-proofs what the AI built.</p>
-    <p>ai-dx.org is about all of that. It's written by someone with 35 years of programming experience, 30 years of getting paid for it, and a strong opinion that wearing many hats is not a liability anymore — it's the job.</p>
-    <p>The goal: make AI a genuine multiplier on your work, not a crutch. Unapologetic about using AI. Skeptical about using it badly.</p>
+    <div class="article-header"><h1>{about?.data.title ?? 'About'}</h1></div>
+    {Content ? <Content /> : <p>No article is tagged <code>about</code> yet.</p>}
   </article>
 </BaseLayout>
